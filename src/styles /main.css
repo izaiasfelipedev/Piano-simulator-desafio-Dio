@@ -1,0 +1,122 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e3f2fd;
+  color: #fff;
+}
+
+.container {
+  width: 780px;
+  border-radius: 20px;
+  padding: 35px 40px;
+  background-color: black;
+}
+
+.container header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #b2b2b2;
+}
+
+header h2 {
+  font-size: 1.6rem;
+}
+
+header .column {
+  display: flex;
+  align-items: center;
+}
+
+header .column span {
+  font-weight: 500;
+  margin-right: 15px;
+  font-size: 1.19rem;
+}
+
+.volumeSlider input {
+  accent-color: #fff;
+}
+
+.keysCheck input {
+  position: relative;
+  appearance: none;
+  width: 60px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: #4b4b4b;
+  cursor: pointer;
+}
+
+.keysCheck input::before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  top: 50%;
+  left: 0.3rem;
+  border-radius: inherit;
+  background-color: #8c8c8c;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+.keysCheck input:checked::before {
+  left: 2.1rem;
+  background-color: #fff;
+}
+
+.pianoKeys {
+  display: flex;
+  margin-top: 40px;
+}
+.pianoKeys .key {
+  position: relative;
+  user-select: none;
+  list-style: none;
+  cursor: pointer;
+  color: #a2a2a2;
+  text-transform: uppercase;
+}
+
+.pianoKeys .white {
+  width: 70px;
+  height: 230px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background: linear-gradient(#fff 96%, #eee 4%);
+}
+
+.pianoKeys .black {
+  width: 44px;
+  height: 140px;
+  z-index: 2;
+  margin: 0 -22px 0 -22px;
+  border: 1px solid black;
+  border-radius: 0 0 5px 5px;
+  background: linear-gradient(#333, #000);
+}
+
+.pianoKeys span {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.13rem;
+}
+
+.pianoKeys .white.active {
+  box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom #fff 0%, #eee 100%);
+}
+
+.pianoKeys .black.active {
+  box-shadow: inset -5px 5px 10px rgba(255, 255, 255, 0.1);
+  background: linear-gradient(to bottom #000, #434343);
+}
+
+.pianoKeys .key.hide span {
+  display: none;
+}
